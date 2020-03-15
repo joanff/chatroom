@@ -1,0 +1,5 @@
+mysqlclient
+flask
+flask_restful
+sqlalchemy
+requests

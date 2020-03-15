@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+fabric = "==1.14.0"
+
+[[source]]
+url = "https://bloomberg.bintray.com/pip/simple"
+verify_ssl = true
+name = "chatroom"
+
+[packages]
+flask="*"
+flask_restful="*"
+requests="*"
+sqlalchemy="*"
+mysqlclient="*"
+
+
+
+
+[requires]
+python_version = "3.7"
+

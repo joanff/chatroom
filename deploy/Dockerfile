@@ -11,6 +11,7 @@ ADD . /app
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update && apt-get install -y default-libmysqlclient-dev && rm -rf /var/lib/apt
+RUN apt-get update && apt-get install -y default-mysql-client
 RUN pip3 install --trusted-host pypi.python.org --default-timeout=1000 -r deploy/requirements.txt
 RUN pip3 install mysql-connector
 
@@ -20,4 +21,6 @@ EXPOSE 5000
 
 # Run app.py when the container launches
 RUN chmod +x start.sh
-CMD ./start.sh
+RUN chmod +x wait-for-mysql.sh
+#CMD ./start.sh
+CMD ["./wait-for-mysql.sh", "db", "./start.sh"]
